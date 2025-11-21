@@ -1,0 +1,23 @@
+name: Python Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    
+      # Step 3: install dependencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      # Step 4: run pytest (if tests exist)
+      - name: Run tests
+        run: |
+          if command -v pytest >/dev/null 2>&1; then pytest --maxfail=1 --disable-warnings --cache-clear; else echo "pytest not installed or no tests found"; fi
