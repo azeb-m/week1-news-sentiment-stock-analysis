@@ -1,4 +1,3 @@
-# week1-news-sentiment-stock-analysis
 
 
 Week 1 – News Sentiment Stock Analysis
@@ -37,5 +36,7 @@ Matplotlib / Plotly
 
 NLTK / VADER / TextBlob (depends on your implementation)
 
+
 yfinance or other stock APIs
+
 
